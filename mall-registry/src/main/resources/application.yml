@@ -1,0 +1,15 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: mall-registry
+  security:
+    user:
+      name: root
+      password: 123456
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761
+    register-with-eureka: false
+    fetch-registry: false
