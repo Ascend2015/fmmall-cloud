@@ -21,6 +21,17 @@
         <module>api</module>
         <module>service</module>
         <module>common</module>
+
+        <module>api-user-login</module>
+        <module>user-check</module>
+        <module>user-register</module>
+        <module>user-save</module>
+        <module>stock-query</module>
+        <module>orderitem-add</module>
+        <module>stock-update</module>
+        <module>shopcart-del</module>
+        <module>order-submit</module>
+        <module>order-add</module>
     </modules>
 
     <properties>

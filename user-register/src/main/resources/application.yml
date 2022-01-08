@@ -1,0 +1,12 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: user-registry
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xiaoyin:123456@localhost:8761/eureka
+feign:
+  hystrix:
+    enabled: true

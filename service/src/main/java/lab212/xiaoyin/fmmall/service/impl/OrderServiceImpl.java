@@ -1,11 +1,11 @@
 package lab212.xiaoyin.fmmall.service.impl;
 
 
+import lab212.xiaoyin.fmmall.entity.*;
 import lab212.xiaoyin.fmmall.dao.OrderItemMapper;
 import lab212.xiaoyin.fmmall.dao.OrdersMapper;
 import lab212.xiaoyin.fmmall.dao.ProductSkuMapper;
 import lab212.xiaoyin.fmmall.dao.ShoppingCartMapper;
-import lab212.xiaoyin.fmmall.entity.*;
 import lab212.xiaoyin.fmmall.service.OrderService;
 import lab212.xiaoyin.fmmall.utils.PageHelper;
 import lab212.xiaoyin.fmmall.vo.ResStatus;
@@ -176,14 +176,16 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    @Transactional(isolation = Isolation.SERIALIZABLE)
+    @Transactional(isolation = Isolation.SERIALIZABLE, rollbackFor = Exception.class)
     public void closeOrder(String orderId) {
         synchronized (this) {
             //  1.修改当前订单：status=6 已关闭  close_type=1 超时未支付
             Orders cancleOrder = new Orders();
             cancleOrder.setOrderId(orderId);
-            cancleOrder.setStatus("6");  //已关闭
-            cancleOrder.setCloseType(1); //关闭类型：超时未支付
+            cancleOrder.setStatus("6");
+            //已关闭
+            cancleOrder.setCloseType(1);
+            //关闭类型：超时未支付
             ordersMapper.updateByPrimaryKeySelective(cancleOrder);
 
             //  2.还原库存：先根据当前订单编号查询商品快照（skuid  buy_count）--->修改product_sku

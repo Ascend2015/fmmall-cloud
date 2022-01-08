@@ -2,7 +2,7 @@ package lab212.xiaoyin.fmmall.service.impl;
 
 
 import lab212.xiaoyin.fmmall.dao.UserAddrMapper;
-import lab212.xiaoyin.fmmall.entity.UserAddr;
+import lab212.xiaoyin.fmmall.beans.UserAddr;
 import lab212.xiaoyin.fmmall.service.UserAddrService;
 import lab212.xiaoyin.fmmall.vo.ResStatus;
 import lab212.xiaoyin.fmmall.vo.ResultVO;

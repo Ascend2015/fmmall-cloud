@@ -5,7 +5,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import lab212.xiaoyin.fmmall.entity.Users;
+import lab212.xiaoyin.fmmall.beans.Users;
 import lab212.xiaoyin.fmmall.service.UserService;
 import lab212.xiaoyin.fmmall.vo.ResStatus;
 import lab212.xiaoyin.fmmall.vo.ResultVO;
