@@ -127,7 +127,6 @@ public class OrderServiceImpl implements OrderService {
                         productSku.setStock(newStock);
                         productSkuMapper.updateByPrimaryKeySelective(productSku);
                     }
-
                     //5.删除购物车：当购物车中的记录购买成功之后，购物车中对应做删除操作
                     for (int cid : cidsList) {
                         shoppingCartMapper.deleteByPrimaryKey(cid);

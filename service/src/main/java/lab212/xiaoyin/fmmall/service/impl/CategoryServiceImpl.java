@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lab212.xiaoyin.fmmall.dao.CategoryMapper;
-import lab212.xiaoyin.fmmall.beans.CategoryVO;
+import lab212.xiaoyin.fmmall.entity.CategoryVO;
 import lab212.xiaoyin.fmmall.service.CategoryService;
 import lab212.xiaoyin.fmmall.vo.ResStatus;
 import lab212.xiaoyin.fmmall.vo.ResultVO;

@@ -3,7 +3,7 @@ package lab212.xiaoyin.fmmall.service.impl;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lab212.xiaoyin.fmmall.dao.IndexImgMapper;
-import lab212.xiaoyin.fmmall.beans.IndexImg;
+import lab212.xiaoyin.fmmall.entity.IndexImg;
 import lab212.xiaoyin.fmmall.service.IndexImgService;
 import lab212.xiaoyin.fmmall.vo.ResStatus;
 import lab212.xiaoyin.fmmall.vo.ResultVO;

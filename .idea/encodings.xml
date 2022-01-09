@@ -7,8 +7,18 @@
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mall-registry/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mapper/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-add/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-submit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/order-timeout-query/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/orderitem-add/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shopcart-del/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/stock-query/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/stock-update/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-check/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-register/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/user-save/src/main/java" charset="UTF-8" />
   </component>
 </project>

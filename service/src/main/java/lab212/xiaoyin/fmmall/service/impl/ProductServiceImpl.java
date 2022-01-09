@@ -1,7 +1,7 @@
 package lab212.xiaoyin.fmmall.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lab212.xiaoyin.fmmall.beans.ProductVO;
+import lab212.xiaoyin.fmmall.entity.*;
 import lab212.xiaoyin.fmmall.dao.ProductImgMapper;
 import lab212.xiaoyin.fmmall.dao.ProductMapper;
 import lab212.xiaoyin.fmmall.dao.ProductParamsMapper;
@@ -47,32 +47,35 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private ObjectMapper objectMapper;
 
+    @Override
     public ResultVO listRecommendProducts() {
-        List<lab212.xiaoyin.fmmall.beans.ProductVO> productVOS = productMapper.selectRecommendProducts();
+        List<ProductVO> productVOS = productMapper.selectRecommendProducts();
         ResultVO resultVO = new ResultVO(ResStatus.OK, "success", productVOS);
         return resultVO;
     }
 
+    @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public ResultVO getProductBasicInfo(String productId) {
         //1.商品基本信息
-        Example example = new Example(lab212.xiaoyin.fmmall.beans.Product.class);
+        Example example = new Example(Product.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andEqualTo("productId", productId);
-        criteria.andEqualTo("productStatus", 1);//状态为1表示上架商品
-        List<lab212.xiaoyin.fmmall.beans.Product> products = productMapper.selectByExample(example);
+        //状态为1表示上架商品
+        criteria.andEqualTo("productStatus", 1);
+        List<Product> products = productMapper.selectByExample(example);
         if (products.size() > 0) {
             //2.商品图片
-            Example example1 = new Example(lab212.xiaoyin.fmmall.beans.ProductImg.class);
+            Example example1 = new Example(ProductImg.class);
             Example.Criteria criteria1 = example1.createCriteria();
             criteria1.andEqualTo("itemId", productId);
-            List<lab212.xiaoyin.fmmall.beans.ProductImg> productImgs = productImgMapper.selectByExample(example1);
+            List<ProductImg> productImgs = productImgMapper.selectByExample(example1);
             //3.商品套餐
             Example example2 = new Example(lab212.xiaoyin.fmmall.beans.ProductSku.class);
             Example.Criteria criteria2 = example2.createCriteria();
             criteria2.andEqualTo("productId", productId);
             criteria2.andEqualTo("status", 1);
-            List<lab212.xiaoyin.fmmall.beans.ProductSku> productSkus = productSkuMapper.selectByExample(example2);
+            List<ProductSku> productSkus = productSkuMapper.selectByExample(example2);
 
             HashMap<String, Object> basicInfo = new HashMap<>();
             basicInfo.put("product", products.get(0));
@@ -86,10 +89,10 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ResultVO getProductParamsById(String productId) {
-        Example example = new Example(lab212.xiaoyin.fmmall.beans.ProductParams.class);
+        Example example = new Example(ProductParams.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andEqualTo("productId", productId);
-        List<lab212.xiaoyin.fmmall.beans.ProductParams> productParams = productParamsMapper.selectByExample(example);
+        List<ProductParams> productParams = productParamsMapper.selectByExample(example);
         if (productParams.size() > 0) {
             return new ResultVO(ResStatus.OK, "success", productParams.get(0));
         } else {
@@ -101,7 +104,7 @@ public class ProductServiceImpl implements ProductService {
     public ResultVO getProductsByCategoryId(int categoryId, int pageNum, int limit) {
         //1.查询分页数据
         int start = (pageNum - 1) * limit;
-        List<lab212.xiaoyin.fmmall.beans.ProductVO> productVOS = productMapper.selectProductByCategoryId(categoryId, start, limit);
+        List<ProductVO> productVOS = productMapper.selectProductByCategoryId(categoryId, start, limit);
         //2.查询当前类别下的商品的总记录数
         Example example = new Example(lab212.xiaoyin.fmmall.beans.Product.class);
         Example.Criteria criteria = example.createCriteria();
@@ -152,11 +155,11 @@ public class ProductServiceImpl implements ProductService {
             //3.计算总页数
             int pageCount = count % limit == 0 ? count / limit : count / limit + 1;
             Iterator<SearchHit> iterator = hits.iterator();
-            List<lab212.xiaoyin.fmmall.beans.Product4Es> products = new ArrayList<lab212.xiaoyin.fmmall.beans.Product4Es>();
+            List<Product4Es> products = new ArrayList<Product4Es>();
             while (iterator.hasNext()) {
                 SearchHit searchHit = iterator.next();
                 String product4EsStr = searchHit.getSourceAsString();
-                lab212.xiaoyin.fmmall.beans.Product4Es product4Es = objectMapper.readValue(product4EsStr, lab212.xiaoyin.fmmall.beans.Product4Es.class);
+                Product4Es product4Es = objectMapper.readValue(product4EsStr, Product4Es.class);
                 //获取高亮字段
                 Map<String, HighlightField> highlightFields = searchHit.getHighlightFields();
                 HighlightField productNameField = highlightFields.get("productName");
@@ -168,7 +171,7 @@ public class ProductServiceImpl implements ProductService {
             }
 
             //4.封装，返回数据
-            PageHelper<lab212.xiaoyin.fmmall.beans.Product4Es> pageHelper = new PageHelper<>(count, pageCount, products);
+            PageHelper<Product4Es> pageHelper = new PageHelper<>(count, pageCount, products);
             resultVO = new ResultVO(ResStatus.OK, "SUCCESS", pageHelper);
 
         } catch (IOException e) {

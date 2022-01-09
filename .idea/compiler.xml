@@ -7,12 +7,22 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mall-registry" />
+        <module name="user-register" />
+        <module name="user-save" />
+        <module name="shopcart-del" />
+        <module name="stock-query" />
+        <module name="orderitem-add" />
+        <module name="mapper" />
         <module name="api-user-login" />
+        <module name="stock-update" />
         <module name="common" />
+        <module name="order-add" />
         <module name="service" />
         <module name="beans" />
-        <module name="mapper" />
+        <module name="order-timeout-query" />
         <module name="api" />
+        <module name="user-check" />
+        <module name="order-submit" />
       </profile>
     </annotationProcessing>
   </component>
@@ -24,7 +34,17 @@
       <module name="common" options="-parameters" />
       <module name="mall-registry" options="-parameters" />
       <module name="mapper" options="-parameters" />
+      <module name="order-add" options="-parameters" />
+      <module name="order-submit" options="-parameters" />
+      <module name="order-timeout-query" options="-parameters" />
+      <module name="orderitem-add" options="-parameters" />
       <module name="service" options="-parameters" />
+      <module name="shopcart-del" options="-parameters" />
+      <module name="stock-query" options="-parameters" />
+      <module name="stock-update" options="-parameters" />
+      <module name="user-check" options="-parameters" />
+      <module name="user-register" options="-parameters" />
+      <module name="user-save" options="-parameters" />
     </option>
   </component>
 </project>

@@ -2,7 +2,7 @@ package lab212.xiaoyin.fmmall.service.impl;
 
 
 import lab212.xiaoyin.fmmall.dao.UserAddrMapper;
-import lab212.xiaoyin.fmmall.beans.UserAddr;
+import lab212.xiaoyin.fmmall.entity.UserAddr;
 import lab212.xiaoyin.fmmall.service.UserAddrService;
 import lab212.xiaoyin.fmmall.vo.ResStatus;
 import lab212.xiaoyin.fmmall.vo.ResultVO;
@@ -20,6 +20,7 @@ public class UserAddrServiceImpl implements UserAddrService {
     @Autowired
     private UserAddrMapper userAddrMapper;
 
+    @Override
     @Transactional(propagation = Propagation.SUPPORTS)
     public ResultVO listAddrsByUid(int userId) {
         Example example = new Example(UserAddr.class);

@@ -2,8 +2,8 @@ package lab212.xiaoyin.fmmall.service.impl;
 
 
 import lab212.xiaoyin.fmmall.dao.ProductCommentsMapper;
-import lab212.xiaoyin.fmmall.beans.ProductComments;
-import lab212.xiaoyin.fmmall.beans.ProductCommentsVO;
+import lab212.xiaoyin.fmmall.entity.ProductComments;
+import lab212.xiaoyin.fmmall.entity.ProductCommentsVO;
 import lab212.xiaoyin.fmmall.service.ProductCommontsService;
 import lab212.xiaoyin.fmmall.utils.PageHelper;
 import lab212.xiaoyin.fmmall.vo.ResStatus;
