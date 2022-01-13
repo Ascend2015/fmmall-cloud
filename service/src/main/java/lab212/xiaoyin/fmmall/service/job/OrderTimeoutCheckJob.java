@@ -2,7 +2,7 @@ package lab212.xiaoyin.fmmall.service.job;
 
 import com.github.wxpay.sdk.WXPay;
 import lab212.xiaoyin.fmmall.dao.OrdersMapper;
-import lab212.xiaoyin.fmmall.beans.Orders;
+import lab212.xiaoyin.fmmall.entity.Orders;
 import lab212.xiaoyin.fmmall.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;

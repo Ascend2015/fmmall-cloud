@@ -17,6 +17,13 @@
         <option value="$PROJECT_DIR$/order-submit/pom.xml" />
         <option value="$PROJECT_DIR$/order-add/pom.xml" />
         <option value="$PROJECT_DIR$/order-timeout-query/pom.xml" />
+        <option value="$PROJECT_DIR$/order-status-update/pom.xml" />
+        <option value="$PROJECT_DIR$/order-cancel/pom.xml" />
+        <option value="$PROJECT_DIR$/order-timeout-cancel/pom.xml" />
+        <option value="$PROJECT_DIR$/order-item-query/pom.xml" />
+        <option value="$PROJECT_DIR$/product-sku-query/pom.xml" />
+        <option value="$PROJECT_DIR$/zipkin-server/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
       </list>
     </option>
   </component>

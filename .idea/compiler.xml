@@ -7,12 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mall-registry" />
+        <module name="order-timeout-cancel" />
+        <module name="product-sku-query" />
         <module name="user-register" />
         <module name="user-save" />
         <module name="shopcart-del" />
+        <module name="order-status-update" />
         <module name="stock-query" />
         <module name="orderitem-add" />
         <module name="mapper" />
+        <module name="config-server" />
         <module name="api-user-login" />
         <module name="stock-update" />
         <module name="common" />
@@ -20,9 +24,12 @@
         <module name="service" />
         <module name="beans" />
         <module name="order-timeout-query" />
+        <module name="zipkin-server" />
         <module name="api" />
+        <module name="order-item-query" />
         <module name="user-check" />
         <module name="order-submit" />
+        <module name="order-cancel" />
       </profile>
     </annotationProcessing>
   </component>
@@ -32,12 +39,18 @@
       <module name="api-user-login" options="-parameters" />
       <module name="beans" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="mall-registry" options="-parameters" />
       <module name="mapper" options="-parameters" />
       <module name="order-add" options="-parameters" />
+      <module name="order-cancel" options="-parameters" />
+      <module name="order-item-query" options="-parameters" />
+      <module name="order-status-update" options="-parameters" />
       <module name="order-submit" options="-parameters" />
+      <module name="order-timeout-cancel" options="-parameters" />
       <module name="order-timeout-query" options="-parameters" />
       <module name="orderitem-add" options="-parameters" />
+      <module name="product-sku-query" options="-parameters" />
       <module name="service" options="-parameters" />
       <module name="shopcart-del" options="-parameters" />
       <module name="stock-query" options="-parameters" />
@@ -45,6 +58,7 @@
       <module name="user-check" options="-parameters" />
       <module name="user-register" options="-parameters" />
       <module name="user-save" options="-parameters" />
+      <module name="zipkin-server" options="-parameters" />
     </option>
   </component>
 </project>

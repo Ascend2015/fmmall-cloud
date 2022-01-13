@@ -4,6 +4,7 @@ import com.github.wxpay.sdk.WXPay;
 import lab212.xiaoyin.fmmall.beans.Orders;
 import lab212.xiaoyin.fmmall.ordersubmit.config.MyPayConfig;
 import lab212.xiaoyin.fmmall.ordersubmit.service.OrderSubmitService;
+import lab212.xiaoyin.fmmall.ordersubmit.service.impl.SendMsg2MqService;
 import lab212.xiaoyin.fmmall.vo.ResStatus;
 import lab212.xiaoyin.fmmall.vo.ResultVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,9 @@ public class OrderSubmitController {
 
     @Autowired
     private OrderSubmitService orderSubmitService;
+
+    @Autowired
+    private SendMsg2MqService sendMsg2MqService;
 
     @PostMapping("/add")
     public ResultVO add(String cids, @RequestBody Orders order) {
@@ -56,6 +60,8 @@ public class OrderSubmitController {
                 orderInfo.put("payUrl", resp.get("code_url"));
                 //orderInfo中包含：订单编号，购买的商品名称，支付链接
                 resultVO = new ResultVO(ResStatus.OK, "提交订单成功！", orderInfo);
+                //当订单保存成功以后，将订单编号写入死信队列
+                sendMsg2MqService.sendMsg(orderId);
             } else {
                 resultVO = new ResultVO(ResStatus.NO, "提交订单失败！", null);
             }

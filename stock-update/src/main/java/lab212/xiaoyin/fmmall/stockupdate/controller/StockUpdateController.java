@@ -4,6 +4,7 @@ import lab212.xiaoyin.fmmall.entity.ProductSku;
 import lab212.xiaoyin.fmmall.stockupdate.service.StockUpdateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class StockUpdateController {
     private StockUpdateService stockUpdateService;
 
     @PutMapping("/stock/update")
-    public int update(List<ProductSku> skus){
+    public int update(@RequestBody List<ProductSku> skus){
         return stockUpdateService.updateStock(skus);
     }
 }

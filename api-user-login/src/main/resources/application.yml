@@ -1,18 +1,24 @@
-server:
-  port: 8001
+#server:
+#  port: 8001
+#spring:
+#  application:
+#    name: api-user-login
+#  redis:
+#    port: 6380
+#    host: 192.168.239.154
+#    database: 0
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://xiaoyin:123456@localhost:8761/eureka
+#feign:
+#  hystrix:
+#    enabled: true
+#
+###
 spring:
-  application:
-    name: api-user-login
-  redis:
-    port: 6380
-    host: 192.168.239.154
-    database: 0
-eureka:
-  client:
-    service-url:
-      defaultZone: http://xiaoyin:123456@localhost:8761/eureka
-feign:
-  hystrix:
-    enabled: true
-
-##
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: api-user-login
+      label: master

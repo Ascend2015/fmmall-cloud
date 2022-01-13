@@ -1,0 +1,15 @@
+package lab212.xiaoyin.fmmall.order.dao;
+
+import lab212.xiaoyin.fmmall.entity.Orders;
+import org.springframework.stereotype.Repository;
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
+
+/**
+ * @author yinck
+ * @version 1.0
+ * @date 2022-01-09 17:59
+ */
+@Repository
+public interface OrdersMapper extends Mapper<Orders>, MySqlMapper<Orders> {
+}

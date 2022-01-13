@@ -32,6 +32,11 @@
         <module>shopcart-del</module>
         <module>order-submit</module>
         <module>order-add</module>
+        <module>order-timeout-query</module>
+        <module>order-status-update</module>
+        <module>order-cancel</module>
+        <module>order-timeout-cancel</module>
+        <module>order-item-query</module>
     </modules>
 
     <properties>

@@ -7,6 +7,18 @@ spring:
     port: 6380
     host: 192.168.239.154
     database: 0
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1
+  rabbitmq:
+    host: 192.168.239.154
+    port: 5672
+    virtual-host: host1
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:

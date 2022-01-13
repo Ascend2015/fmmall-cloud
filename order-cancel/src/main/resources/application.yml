@@ -1,0 +1,10 @@
+server:
+  port: 9068
+spring:
+  application:
+    name: order-cancel
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xiaoyin:123456@localhost:8761/eureka
+

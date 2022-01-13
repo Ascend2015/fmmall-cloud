@@ -10,6 +10,12 @@ spring:
     username: root
     password: 123456
     url: jdbc:mysql://localhost:3306/fmmall2?characterEncoding=utf-8
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+    sleuth:
+      sampler:
+        probability: 1
 eureka:
   client:
     service-url:
