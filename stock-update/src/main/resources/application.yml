@@ -21,3 +21,6 @@ eureka:
 mybatis:
   mapper-locations: classpath:mappers/*Mapper.xml
   type-aliases-package: lab212.xiaoyin.fmmall.entity
+tx-lcn:
+  client:
+    manager-address: localhost:8070

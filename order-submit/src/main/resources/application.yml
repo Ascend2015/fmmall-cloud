@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: order-submit
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/fmmall2?characterEncoding=utf-8
   redis:
     port: 6380
     host: 192.168.239.154
@@ -26,5 +31,7 @@ eureka:
 feign:
   hystrix:
     enabled: true
-
+tx-lcn:
+  client:
+    manager-address: localhost:8070
 ##

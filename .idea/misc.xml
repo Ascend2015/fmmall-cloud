@@ -24,6 +24,7 @@
         <option value="$PROJECT_DIR$/product-sku-query/pom.xml" />
         <option value="$PROJECT_DIR$/zipkin-server/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/tx-manager/pom.xml" />
       </list>
     </option>
   </component>
