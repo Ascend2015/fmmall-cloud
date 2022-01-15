@@ -1,5 +1,6 @@
 package lab212.xiaoyin.fmmall.ordersubmit.service.impl;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import lab212.xiaoyin.fmmall.beans.Orders;
 import lab212.xiaoyin.fmmall.beans.ProductSku;
 import lab212.xiaoyin.fmmall.beans.ShoppingCartVO;
@@ -10,6 +11,7 @@ import lab212.xiaoyin.fmmall.ordersubmit.service.feign.ShopcartDelClient;
 import lab212.xiaoyin.fmmall.ordersubmit.service.feign.StockUpdateClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -33,6 +35,8 @@ public class OrderSubmitServiceImpl implements OrderSubmitService {
     @Autowired
     private ShopcartDelClient shopcartDelClient;
 
+    @LcnTransaction
+    @Transactional
     @Override
     public Map<String, String> addOrder(String cid, Orders order) {
         String orderId = UUID.randomUUID().toString().replace("-", "");

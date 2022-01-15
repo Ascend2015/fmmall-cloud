@@ -1,6 +1,5 @@
 package lab212.xiaoyin.fmmall.orderadd.controller;
 
-import com.codingapi.txlcn.tc.annotation.TccTransaction;
 import lab212.xiaoyin.fmmall.entity.Orders;
 import lab212.xiaoyin.fmmall.entity.ShoppingCartVO;
 import lab212.xiaoyin.fmmall.orderadd.service.OrderAddService;
@@ -26,7 +25,6 @@ public class OrderAddController {
 
     Logger logger = LoggerFactory.getLogger(OrderAddController.class);
 
-    @TccTransaction
     @PostMapping("/order/save")
     public List<ShoppingCartVO> saveOrder(@RequestBody Orders order, String cids) {
         return orderAddService.save(order, cids);

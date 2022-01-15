@@ -1,5 +1,6 @@
 package lab212.xiaoyin.fmmall.orderadd.service.impl;
 
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import lab212.xiaoyin.fmmall.entity.Orders;
 import lab212.xiaoyin.fmmall.entity.ShoppingCartVO;
 import lab212.xiaoyin.fmmall.orderadd.dao.OrdersMapper;
@@ -7,6 +8,7 @@ import lab212.xiaoyin.fmmall.orderadd.feign.StockQueryClient;
 import lab212.xiaoyin.fmmall.orderadd.service.OrderAddService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -26,6 +28,8 @@ public class OrderAddServiceImpl implements OrderAddService {
     @Autowired
     private OrdersMapper ordersMapper;
 
+    @LcnTransaction
+    @Transactional
     @Override
     public List<ShoppingCartVO> save(Orders order, String cids) {
         //1.校验库存

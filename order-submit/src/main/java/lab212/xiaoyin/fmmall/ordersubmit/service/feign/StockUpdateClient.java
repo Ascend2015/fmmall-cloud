@@ -12,7 +12,7 @@ import java.util.List;
  * @version 1.0
  * @date 2022-01-09 02:14
  */
-@FeignClient(value = "stock-update", fallback = StockUpdateClientFallback.class)
+@FeignClient(value = "stock-update")
 public interface StockUpdateClient {
 
     @PutMapping("/stock/update")
