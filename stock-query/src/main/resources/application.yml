@@ -1,4 +1,3 @@
-
 server:
   port: 10044
 spring:
@@ -9,6 +8,10 @@ spring:
     username: root
     password: 123456
     url: jdbc:mysql://localhost:3306/fmmall2?characterEncoding=utf-8
+  boot:
+    admin:
+      client:
+        url: http://localhost:9301
   zipkin:
     enabled: true
     base-url: http://localhost:9411
@@ -18,7 +21,15 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://xiaoyin:123456@localhost:8761/eureka
+      defaultZone: http://root:123456@localhost:8761/eureka
 mybatis:
   mapper-locations: classpath:mappers/*Mapper.xml
   type-aliases-package: lab212.xiaoyin.fmmall.entity
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
