@@ -9,8 +9,8 @@ spring:
         git:
           uri: https://gitee.com/Ascend2015/fmmall-config.git
           search-paths: files
-          username: m18252711915@163.com
-          password: yck4611764
+          username:
+          password:
   boot:
     admin:
       client:
